@@ -5,8 +5,10 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ModeToggle } from "./Mode-toggle"
+import { useRouter } from "next/navigation"
 
 export function Topbar() {
+  const router = useRouter()
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -54,7 +56,7 @@ export function Topbar() {
         <div className="flex items-center gap-3">
           <ModeToggle
            />
-          <Button size="sm">
+          <Button size="sm" onClick={()=>router.push("/form")}>
             Start Free
           </Button>
         </div>

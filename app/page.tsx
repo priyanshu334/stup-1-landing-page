@@ -1,10 +1,13 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { HeroModel } from "@/components/hero-model"
 import { PricingSection } from "@/components/PriceSection"
 import { FAQSection } from "@/components/faqsection"
 import { Footer } from "@/components/Footer"
+import { useRouter } from "next/navigation"
 
 export default function Home() {
+  const router = useRouter()
   return (
     <main className="pt-20">
 
@@ -25,7 +28,7 @@ export default function Home() {
             </p>
 
             <div className="flex gap-4">
-              <Button size="lg">
+              <Button size="lg" onClick={() => router.push("/form")}>
                 Start Free
               </Button>
               <Button size="lg" variant="outline">
